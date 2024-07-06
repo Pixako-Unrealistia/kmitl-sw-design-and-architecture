@@ -8,11 +8,11 @@
 
 //When I describe refactoring to people, one of the most difficult things to get over is the rhythm of refactoring. This is the way you do small step by small step, slowly improving code quality. So it seems that the best way to deal with this is to give an example. As soon as I do this, however, I run into a big problem. If I pick a large program, then describing it and how it is refactored is too complicated for any reader to work through. However if I pick a program that is small enough to be comprehensible, then refactoring does not look like it is worthwhile.
 
-//Thus I�m in the classic bind of anyone who wants to describe techniques that are useful for real world programs. Frankly it is not worth the effort to do the refactoring that I�m going to show you on a small program like the one I�m going to use. But if the code I�m showing you is part of a larger system, then the refactoring soon becomes important. So I have to ask you to look at this and imagine in the context of a much larger system.
+//Thus I'm in the classic bind of anyone who wants to describe techniques that are useful for real world programs. Frankly it is not worth the effort to do the refactoring that I'm going to show you on a small program like the one I�m going to use. But if the code I�m showing you is part of a larger system, then the refactoring soon becomes important. So I have to ask you to look at this and imagine in the context of a much larger system.
 
 //The Starting Point
 
-//The sample program is quite simple. It is a program to print out a statement of a customer�s charges at a video store. There are several classes that represent various video elements. Here�s a class diagram to show them.
+//The sample program is quite simple. It is a program to print out a statement of a customer's charges at a video store. There are several classes that represent various video elements. Here's a class diagram to show them.
 
 
 

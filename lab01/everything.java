@@ -80,7 +80,7 @@ class Tape extends DomainObject
     private String _serialNumber;
     private Movie _movie;
     }
-The rental class represents a customer renting a movie.
+//The rental class represents a customer renting a movie.
 
 class Rental extends DomainObject
     {

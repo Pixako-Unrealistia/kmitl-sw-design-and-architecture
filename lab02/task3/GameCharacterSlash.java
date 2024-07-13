@@ -6,7 +6,13 @@ public class GameCharacterSlash extends GameCharacter {
 	}
 	
 	public void change() {
-		this.setGuitar(new Guitar_GibsonSG());
+		if (guitarBehavior instanceof Guitar_LesPaul) {
+			this.setGuitar(new Guitar_GibsonSG());
+		} else if (guitarBehavior instanceof Guitar_GibsonSG) {
+			this.setGuitar(new Guitar_Telecaster());
+		} else if (guitarBehavior instanceof Guitar_Telecaster) {
+			this.setGuitar(new Guitar_LesPaul());
+		}
 	}
 	
 }

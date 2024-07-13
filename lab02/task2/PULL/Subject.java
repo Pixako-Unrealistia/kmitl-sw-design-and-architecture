@@ -1,4 +1,4 @@
-package lab02.task2;
+package lab02.task2.PULL;
 
 public interface Subject {
     // add an observer to the list

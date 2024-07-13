@@ -1,4 +1,4 @@
-package lab02.task2;
+package lab02.task2.PUSH;
 
 class TestBabyMonitor {
     public static void main(String[] args) {

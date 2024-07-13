@@ -1,4 +1,4 @@
-package lab02.task2;
+package lab02.task2.PULL;
 
 import java.util.ArrayList;
 
@@ -24,7 +24,7 @@ public class Baby implements Subject {
         // notify all of the observers
         for (int i = 0; i < observers.size(); i++) {
             Observer observer = (Observer) observers.get(i);
-            observer.update(babyname, crying, level);
+            observer.update();
         }
     }
 
@@ -48,5 +48,18 @@ public class Baby implements Subject {
         this.level = level;
         // notify all of the observers
         notifyObservers();
+    }
+
+    // THIS IS FOR PULL STRATEGY
+    public boolean getCrying() {
+        return crying;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public String getBabyName() {
+        return babyname;
     }
 }

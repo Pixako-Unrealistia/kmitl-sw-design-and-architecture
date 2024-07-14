@@ -1,6 +1,5 @@
 
 public class TestGuitarHero {
-
 	public static void main(String[] args) {
 			GameCharacter player1 = new GameCharacterSlash();
 			GameCharacter player2 = new GameCharacterHendrix();

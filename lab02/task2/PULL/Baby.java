@@ -1,11 +1,10 @@
 package lab02.task2.PULL;
 
 import java.util.ArrayList;
+import java.util.*;
 
-public class Baby implements Subject {
+public class Baby extends Observable {
 
-    // the list of observers
-    private ArrayList observers;
     // the state of the baby(crying or not)
     private boolean crying = false;
     // the level of the baby's crying(for advanced monitor)
@@ -17,29 +16,6 @@ public class Baby implements Subject {
         // set the name of the baby
         this.babyname = name;
         // initialize the list of observers(empty list)
-        observers = new ArrayList();
-    }
-
-    public void notifyObservers() {
-        // notify all of the observers
-        for (int i = 0; i < observers.size(); i++) {
-            Observer observer = (Observer) observers.get(i);
-            observer.update();
-        }
-    }
-
-    public void registerObserver(Observer o) {
-        // add an observer to the list
-        observers.add(o);
-
-    }
-
-    public void removeObserver(Observer o) {
-        // remove an observer from the list if it exists
-        int i = observers.indexOf(o);
-        if (i >= 0) {
-            observers.remove(i);
-        }
     }
 
     public void setData(boolean crying, int level) {
@@ -47,6 +23,8 @@ public class Baby implements Subject {
         this.crying = crying;
         this.level = level;
         // notify all of the observers
+
+        this.setChanged();
         notifyObservers();
     }
 

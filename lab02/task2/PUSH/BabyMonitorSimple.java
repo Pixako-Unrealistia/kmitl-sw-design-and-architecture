@@ -1,8 +1,10 @@
 package lab02.task2.PUSH;
 
+import java.util.*;
+
 public class BabyMonitorSimple implements Observer {
     // the subject to observe
-    private Subject mdata;
+    private Baby mdata;
     // the name(location) of the monitor
     private String name;
     // the state of the baby(crying or not)
@@ -14,7 +16,7 @@ public class BabyMonitorSimple implements Observer {
         // set the name of the monitor
         this.name = location;
         // register the monitor to the subject
-        mdata.registerObserver(this);
+        mdata.addObserver(this);
     }
 
     public void display() {
@@ -26,7 +28,7 @@ public class BabyMonitorSimple implements Observer {
 
     public void turnOff() {
         // remove the monitor from the subject
-        mdata.removeObserver(this);
+        mdata.deleteObserver(this);
     }
 
     // (PUSH strategy)
@@ -36,6 +38,11 @@ public class BabyMonitorSimple implements Observer {
         // update the state of the baby
         this.crying = crying;
         // display the state of the baby(if crying, print a message)
+        display();
+    }
+
+    public void update(Observable o, Object arg) {
+        crying = (boolean) arg;
         display();
     }
 

@@ -1,5 +1,7 @@
 package lab02.task2.PULL;
 
+import java.util.*;
+
 public class BabyMonitorSimple implements Observer {
     // use baby as the subject to observe so that this class can directly access teh
     // data of the baby
@@ -13,12 +15,12 @@ public class BabyMonitorSimple implements Observer {
         // set the name of the monitor
         this.name = location;
         // register the monitor to the subject
-        mdata.registerObserver(this);
+        mdata.addObserver(this);
     }
 
-    public void display() {
+    public void display(Baby d) {
         // get the state of the baby(crying or not)
-        boolean crying = mdata.getCrying();
+        boolean crying = d.getCrying();
         // if the baby is crying, print a message. if not, ignore
         if (crying) {
             System.out.println("Monitor:" + name + " baby is crying");
@@ -27,15 +29,12 @@ public class BabyMonitorSimple implements Observer {
 
     public void turnOff() {
         // remove the monitor from the subject
-        mdata.removeObserver(this);
+        mdata.deleteObserver(this);
     }
 
-    // (PULL strategy)
-    // this function will trigger when the state of the subject changes
-    // this function need to pull the data from the subject by itself as there are
-    // no arguments
-    public void update() {
-        // display the state of the baby(if crying, print a message)
-        display();
+    @Override
+    public void update(Observable o, Object arg) {
+        // update the state of the baby
+        display((Baby) o);
     }
 }

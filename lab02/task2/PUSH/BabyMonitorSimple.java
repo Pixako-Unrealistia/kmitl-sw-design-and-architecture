@@ -42,7 +42,11 @@ public class BabyMonitorSimple implements Observer {
     }
 
     public void update(Observable o, Object arg) {
-        crying = (boolean) arg;
+        // arg is {crying, level}
+        // Get crying property from arg
+        this.crying = (boolean) ((Object[]) arg)[0];
+
+        // crying = arg.crying;
         display();
     }
 

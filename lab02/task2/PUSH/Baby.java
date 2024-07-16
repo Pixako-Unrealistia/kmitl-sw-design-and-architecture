@@ -25,7 +25,10 @@ public class Baby extends Observable {
         this.level = level;
         // notify all of the observers
         setChanged();
-        notifyObservers(crying);
+        // pass {crying, level} to the observers
+        Object data = new Object[] { crying, level };
+
+        notifyObservers(data);
     }
 
 }

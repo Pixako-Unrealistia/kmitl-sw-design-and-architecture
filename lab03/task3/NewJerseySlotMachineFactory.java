@@ -6,11 +6,11 @@ public class NewJerseySlotMachineFactory extends SlotMachineFactory {
     public SlotMachine createSlotMachine(SlotMachineType type) {
         switch (type) {
             case STRAIGHT:
-                return new StraightSlot("New Jersey", "Small", "coins", "LCD", "ARM", "Window ME", "STRAIGHT");
+                return new NewJerseyStraightSlot();
             case BONUS_GAME:
-                return new BonusGameSlot("New Jersey", "Large", "coins", "reels", "ARM", "Window ME", "BONUS_GAME");
+                return new NewJerseyProgressiveSlot();
             case PROGRESSIVE:
-                return new ProgressiveSlot("New Jersey", "Small", "bills", "CRT", "X86", "Window XP", "PROGRESSIVE");
+                return new NewJerseyProgressiveSlot();
             default:
                 return null;
         }

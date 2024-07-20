@@ -6,11 +6,11 @@ public class WashingtonSlotMachineFactory extends SlotMachineFactory {
     public SlotMachine createSlotMachine(SlotMachineType type) {
         switch (type) {
             case STRAIGHT:
-                return new StraightSlot("Washington", "Large", "bills", "reels", "ARM", "Linux","STRAIGHT");
+                return new WashingtonStraightSlot();
             case BONUS_GAME:
-                return new BonusGameSlot("Washington", "Medium", "ticketinticketout", "VGA", "ARM", "Symbian", "BONUS_GAME");
+                return new WashingtonBonusGameSlot();
             case PROGRESSIVE:
-                return new ProgressiveSlot("Washington", "Large", "coins", "reels", "ARM", "Android", "PROGRESSIVE");
+                return new WashingtonProgressiveSlot();
             default:
                 return null;
         }

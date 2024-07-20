@@ -1,8 +1,8 @@
 package lab03.task3;
 
 public class BonusGameSlot extends SlotMachine {
-    public BonusGameSlot(String state, String cabinet, String paymentSystem, String display, String cpu, String operatingSystem) {
-        super(state, cabinet, paymentSystem, display, cpu, operatingSystem);
+    public BonusGameSlot(String state, String cabinet, String paymentSystem, String display, String cpu, String os, String type) {
+        super(state, cabinet, paymentSystem, display, cpu, os, type);
     }
 
 } 

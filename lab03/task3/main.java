@@ -12,10 +12,5 @@ public class main{
         System.out.println(nevadaStraight);
         System.out.println(nevadaBonus);
         System.out.println(nevadaProgressive);
-
-        // result is 
-        // SlotMachine{state='Nevada', cabinet='Large', paymentSystem='ticketinticketout', display='reels', cpu='ARM', os='Linux'}
-        // SlotMachine{state='Nevada', cabinet='Small', paymentSystem='ticketinticketout', display='CRT', cpu='X86', os='Linux'}
-        // SlotMachine{state='Nevada', cabinet='Medium', paymentSystem='ticketinticketout', display='LCD', cpu='X77', os='Android'}
     }
 }

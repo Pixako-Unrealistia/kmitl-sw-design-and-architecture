@@ -8,9 +8,4 @@ public class Omelette extends EggMenu {
 	public void cook() {
 		System.out.println("Flipping the omelette while cooking");
 	}
-	
-	@Override
-	public void serve() {
-		System.out.println("Putting the eggs on the plate");
-	}
 }

@@ -9,8 +9,4 @@ public class SunnySide extends EggMenu {
 		System.out.println("Cooking the eggs sunny side up.");
 	}
 
-	@Override
-	public void serve() {
-		System.out.println("Placing the eggs on a plate");
-	}
 }

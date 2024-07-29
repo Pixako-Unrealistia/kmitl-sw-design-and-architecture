@@ -35,7 +35,7 @@ public class DocumentInvoker {
 		Command tmp = commands.get(level);
 		commands.remove(level);
 		tmp.undo();
-		
+
 	}
 
 	public void Write(String text) {

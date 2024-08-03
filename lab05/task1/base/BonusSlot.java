@@ -6,11 +6,9 @@ public class BonusSlot extends Slot {
 		this.componentFactory= componentFactory;
 	}
  
-	@Override
 	void build() {
 		System.out.println("Building " + name);
 		cabinet = componentFactory.createCabinet();
 		display = componentFactory.createDisplay();
-		
 	}
 }

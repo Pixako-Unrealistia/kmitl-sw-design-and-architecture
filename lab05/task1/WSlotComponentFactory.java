@@ -1,15 +1,15 @@
-
-public class NVSlotComponentFactory implements SlotComponentFactory {
+public class WSlotComponentFactory implements SlotComponentFactory {
 
 	public Cabinet createCabinet() {
 		return new largeCabinet();
 	}
+	
 	public Display createDisplay() {
 		return new LCD();
 	}
 
 	public OS createOS() {
-		return new Android();
+		return new WindowsXP();
 	}
 
 	public Payment createPayment() {
@@ -19,5 +19,5 @@ public class NVSlotComponentFactory implements SlotComponentFactory {
 	public GPU createGPU() {
 		return new X86();
 	}
-	
+
 }

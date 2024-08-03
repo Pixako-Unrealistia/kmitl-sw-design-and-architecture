@@ -1,16 +1,13 @@
 
-public class BonusSlot extends Slot {
+public class ProgressiveSlot extends Slot {
 	SlotComponentFactory componentFactory;
 	
-	public BonusSlot(SlotComponentFactory componentFactory) {
+	public ProgressiveSlot(SlotComponentFactory componentFactory) {
 		this.componentFactory= componentFactory;
 	}
  
-	@Override
 	void build() {
-		System.out.println("Building " + name);
 		cabinet = componentFactory.createCabinet();
 		display = componentFactory.createDisplay();
-		
 	}
 }

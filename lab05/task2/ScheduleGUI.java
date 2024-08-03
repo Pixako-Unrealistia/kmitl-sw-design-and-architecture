@@ -3,7 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.table.*;
 
-public class ScheduleGUI extends JFrame {  // Caretaker
+public class ScheduleGUI extends JFrame {
 
 	private TableMemento memento;
 	private ScheduleTableModel tableModel;
@@ -37,9 +37,9 @@ public class ScheduleGUI extends JFrame {  // Caretaker
 	}
 
 	protected void initComponents() {
-		addWindowListener (new WindowAdapter () {
-			public void windowClosing (WindowEvent evt) {
-				exitForm (evt);
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent evt) {
+				exitForm(evt);
 			}
 		});
 
@@ -57,8 +57,8 @@ public class ScheduleGUI extends JFrame {  // Caretaker
 
 		JMenuItem exitMenuItem = new JMenuItem("Exit");
 		exitMenuItem.addActionListener(new ActionListener() {
-			public void actionPerformed (ActionEvent e) {
-				exitMenuItemActionPerformed (e);
+			public void actionPerformed(ActionEvent e) {
+				exitMenuItemActionPerformed(e);
 			}
 		});
 
@@ -76,7 +76,6 @@ public class ScheduleGUI extends JFrame {  // Caretaker
 		newButton.setPreferredSize(new Dimension(125, 27));
 		newButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
-				// Get new memento.
 				memento = new TableMemento(tableModel.getData());
 			}
 		});

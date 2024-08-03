@@ -1,7 +1,6 @@
-import javax.swing.*;
-import javax.swing.table.*;
-import java.util.ArrayList;
 import java.io.*;
+import java.util.ArrayList;
+import javax.swing.table.*;
 
 public class ScheduleTableModel extends DefaultTableModel {
 
@@ -28,7 +27,12 @@ public class ScheduleTableModel extends DefaultTableModel {
 	}
 
 	public void setMemento(TableMemento memento) {
-		setDataVector(memento.getDataVector(), memento.getColumnIdentifiers());
+		ArrayList<ArrayList<Object>> dataVector = memento.getDataVector();
+		Object[][] dataArray = new Object[dataVector.size()][];
+		for (int i = 0; i < dataVector.size(); i++) {
+			dataArray[i] = dataVector.get(i).toArray();
+		}
+		setDataVector(dataArray, memento.getColumnIdentifiers().toArray());
 	}
 
 	public void save(String filename) throws IOException {
@@ -62,9 +66,8 @@ public class ScheduleTableModel extends DefaultTableModel {
 		}
 
 		public String toString() {
-		return "[ci=" + columnIdentifiers.toString() + "\n" +
-			"dl=" + dataList.toString() + "]";
+			return "[ci=" + columnIdentifiers.toString() + "\n" +
+				   "dl=" + dataVector.toString() + "]";
 		}
-
 	}
 }

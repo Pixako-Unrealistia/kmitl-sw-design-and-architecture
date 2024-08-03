@@ -2,26 +2,68 @@ public class WSlotComponentFactory implements SlotComponentFactory {
 
     @Override
     public Cabinet createCabinet(String cabi) {
-        throw new UnsupportedOperationException("shikanokoko come refactor this");
+        // Large Medium
+        switch (cabi) {
+            case "Large":
+                return new largeCabinet();
+            case "Medium":
+                return new mediumCabinet();
+            default:
+                return null;
+        }
     }
 
     @Override
     public Payment createPayment(String pay) {
-        throw new UnsupportedOperationException("shikanokoko come refactor this");
+        // ticketinticketout bills coins
+        switch (pay) {
+            case "TicketInTicketOut":
+                return new TicketInTicketOut();
+            case "Bills":
+                return new Bills();
+            case "Coins":
+                return new Coins();
+            default:
+                return null;
+        }
     }
 
     @Override
     public Display createDisplay(String disp) {
-        throw new UnsupportedOperationException("shikanokoko come refactor this");
+        // Reels VGA
+        switch (disp) {
+            case "Reels":
+                return new Reels();
+            case "VGA":
+                return new VGA();
+            default:
+                return null;
+        }
     }
 
     @Override
     public GPU createGPU(String gp) {
-        throw new UnsupportedOperationException("shikanokoko come refactor this");
+        // arm
+        switch (gp) {
+            case "ARM":
+                return new ARM();
+            default:
+                return null;
+        }
     }
 
     @Override
     public OS createOS(String o) {
-        throw new UnsupportedOperationException("shikanokoko come refactor this");
+        // linux android symbian
+        switch (o) {
+            case "Linux":
+                return new Linux();
+            case "Android":
+                return new Android();
+            case "Symbian":
+                return new Symbian();
+            default:
+                return null;
+        }
     }
 }

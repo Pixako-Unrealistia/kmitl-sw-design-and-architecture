@@ -2,7 +2,7 @@ JCC = javac
 
 JVM = java
 
-TARGET = TestEditor
+TARGET = ScheduleGUI
 
 JFLAGS = -g
 

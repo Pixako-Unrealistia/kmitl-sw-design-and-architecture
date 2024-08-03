@@ -2,7 +2,7 @@ JCC = javac
 
 JVM = java
 
-TARGET = Main
+TARGET = SlotMachineApp
 
 JFLAGS = -g
 

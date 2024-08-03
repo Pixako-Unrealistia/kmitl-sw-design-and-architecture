@@ -8,10 +8,19 @@ public abstract class Slot {
 	GPU gpu;
 	Payment payment;
 	OS os;
-	String software = "linux";
+	String software = "default software";
 	ArrayList components = new ArrayList();
 	
-	abstract void build();
+
+	SlotComponentFactory componentFactory;
+	final void build(String cabi, String pay, String disp, String gp, String o) {
+		System.out.println("building the slot machine");
+        cabinet = componentFactory.createCabinet(cabi);
+        display = componentFactory.createDisplay(disp);
+        os = componentFactory.createOS(gp);
+        payment = componentFactory.createPayment(pay);
+        gpu = componentFactory.createGPU(o);
+	}
 	
 	void collectParts() {
 		System.out.println("fetching components:");

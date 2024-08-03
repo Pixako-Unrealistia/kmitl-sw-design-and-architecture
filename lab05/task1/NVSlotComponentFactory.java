@@ -1,23 +1,27 @@
 
 public class NVSlotComponentFactory implements SlotComponentFactory {
+    @Override
+    public Cabinet createCabinet(String cabi) {
+        throw new UnsupportedOperationException("shikanokoko come refactor this");
+    }
 
-	public Cabinet createCabinet() {
-		return new largeCabinet();
-	}
-	public Display createDisplay() {
-		return new LCD();
-	}
+    @Override
+    public Payment createPayment(String pay) {
+        throw new UnsupportedOperationException("shikanokoko come refactor this");
+    }
 
-	public OS createOS() {
-		return new Android();
-	}
+    @Override
+    public Display createDisplay(String disp) {
+        throw new UnsupportedOperationException("shikanokoko come refactor this");
+    }
 
-	public Payment createPayment() {
-		return new TicketInTicketOut();
-	}
+    @Override
+    public GPU createGPU(String gp) {
+        throw new UnsupportedOperationException("shikanokoko come refactor this");
+    }
 
-	public GPU createGPU() {
-		return new X86();
-	}
-	
+    @Override
+    public OS createOS(String o) {
+        throw new UnsupportedOperationException("shikanokoko come refactor this");
+    }
 }

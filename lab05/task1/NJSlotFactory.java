@@ -3,7 +3,7 @@ public class NJSlotFactory extends SlotFactory {
 
 	@Override
 	protected Slot makeSlot(String item) {
-		Slot slot=null;
+		Slot slot = null;
 		SlotComponentFactory componentFactory = new NJSlotComponentFactory();
 		if (item.equals("bonus")) {
 			slot=new BonusSlot(componentFactory);

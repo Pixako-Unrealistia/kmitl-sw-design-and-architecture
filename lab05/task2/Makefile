@@ -2,14 +2,14 @@ JCC = javac
 
 JVM = java
 
-TARGET = ScheduleGUI
+TARGET = SlotMachineApp
 
 JFLAGS = -g
 
-all: $(TARGET).class run
+all: compile run
 
-$(TARGET).class: $(TARGET).java
-	$(JCC) $(JFLAGS) $(TARGET).java
+compile:
+	$(JCC) $(JFLAGS) *.java
 
 run:
 	$(JVM) $(TARGET)
@@ -22,4 +22,4 @@ re:
 	$(MAKE)
 	$(MAKE) run
 
-.phony: all run clean re
+.PHONY: all compile run clean re

@@ -5,6 +5,9 @@ public abstract class Slot {
 	Cabinet cabinet;
 	Display display;
 	String name;
+	GPU gpu;
+	Payment payment;
+	OS os;
 	String software = "linux";
 	ArrayList components = new ArrayList();
 	
@@ -32,6 +35,8 @@ public abstract class Slot {
 	public void setName(String n) {
 		name=n;
 	}
+
+	
 	public String toString() {
 		StringBuffer result = new StringBuffer();
 		result.append("---- " + name + " ----\n");
@@ -43,6 +48,23 @@ public abstract class Slot {
 			result.append(display);
 			result.append("\n");
 		}
+
+		if (gpu != null) {
+			result.append(gpu);
+			result.append("\n");
+		}
+
+		if (payment != null) {
+			result.append(payment);
+			result.append("\n");
+		}
+
+		if (os != null) {
+			result.append(os);
+			result.append("\n");
+		}
+
+
 		return result.toString();
 	}
 }

@@ -3,24 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Adapter;
+// package Adapter;
 
 /**
  *
  * @author boonjv
  */
 package Adapter;
+
 /**
  *
  * @author boonjv
  */
 public class Employee {
- 
+
     private String name;
     private String surname;
     private long emp_num;
     private double salary;
- 
+
     public Employee(String name, String surname, long emp_num, double salary) {
         this.name = name;
         this.surname = surname;
@@ -28,11 +29,10 @@ public class Employee {
         this.salary = salary;
     }
 
- 
     public String getName() {
         return name;
     }
- 
+
     public String getSurname() {
         return surname;
     }
@@ -40,9 +40,9 @@ public class Employee {
     public long getEmpNum() {
         return emp_num;
     }
-  
+
     public double getSalary() {
         return salary;
     }
-  
+
 }

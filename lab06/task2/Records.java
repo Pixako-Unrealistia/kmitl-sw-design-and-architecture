@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.util.ArrayList;
 
-/**
- *
- * @author boonjv
- */
 public class Records {
 
-    private ArrayList employees; //Stores the employees
+    private ArrayList<Employee> employees; //Stores the employees
 
     public Records() {
-        employees = new ArrayList();
+        employees = new ArrayList<Employee>();
     }
 
     public void insert(Employee employee) {

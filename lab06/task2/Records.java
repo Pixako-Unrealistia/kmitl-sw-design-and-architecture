@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Adapter;
+import java.util.ArrayList;
 
 /**
  *
@@ -27,6 +27,7 @@ public class Records {
 
     public boolean isEmployee(long emp_num) {
         //Code to find employee
+        return true;
     }
     
 }

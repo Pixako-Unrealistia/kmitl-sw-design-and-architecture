@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Vector;
+
 public class MergedDatabase {
     private DatabaseAdapter databaseAdapter = new DatabaseAdapter();
     private RecordsAdapter recordsAdapter = new RecordsAdapter();

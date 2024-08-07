@@ -9,8 +9,6 @@
  *
  * @author boonjv
  */
-package Adapter;
-
 /**
  *
  * @author boonjv

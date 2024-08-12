@@ -20,7 +20,9 @@ public class TeaFacade {
         infuser.addTea(tea);
         water.boilWater();
         cup.addWater(water);
+        cup.infuseTea(infuser);
         cup.setSteepTime(15);
         cup.steep();
+        
     }
 }

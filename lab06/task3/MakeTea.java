@@ -13,6 +13,6 @@ public class MakeTea {
         TeaInfuser infuser = new TeaInfuser();
         // Tea tea = new Tea("Eral Grey");
         TeaFacade teaMaker = new TeaFacade(blueCup,water,infuser);
-        teaMaker.makeTea("Eral Grey");
+        teaMaker.makeTea("Eral Gray");
     }
 }

@@ -11,8 +11,7 @@ public class MakeTea {
         TeaCup blueCup = new TeaCup();
         Water water = new Water();
         TeaInfuser infuser = new TeaInfuser();
-        // Tea tea = new Tea("Eral Grey");
         TeaFacade teaMaker = new TeaFacade(blueCup,water,infuser);
-        teaMaker.makeTea("Eral Grey");
+        teaMaker.makeTea("Earl Grey");
     }
 }

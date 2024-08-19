@@ -3,8 +3,10 @@ import java.util.Map;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Observer;
+import java.util.Observable;
 
-class User {
+class User implements Observer {
     private String username;
     private String password;
     private int balance;
@@ -37,6 +39,13 @@ class User {
         }
         this.balance -= amount;
         return true;
+    }
+    @Override
+    public void update(Observable o, Object arg) {
+        System.out.println("NOTI");
+        // get string from arg
+        String str = (String) arg;
+        System.out.println("NOTI : " + str);
     }
 }
 

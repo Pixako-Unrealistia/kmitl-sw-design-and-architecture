@@ -21,6 +21,8 @@ public class MainApp extends JFrame {
     private CurrencyExchangePlugin currencyPlugin;
     private PictureManagementPlugin picturePlugin;
     private PostManagementPlugin postPlugin;
+    private NotificationObservable notificationObservable;
+
     private boolean loggedIn = false;
 
     public MainApp() {
@@ -34,6 +36,7 @@ public class MainApp extends JFrame {
         currencyPlugin = new CurrencyExchangePlugin(userPlugin);
         picturePlugin = new PictureManagementPlugin();
         postPlugin = new PostManagementPlugin(postListModel);
+        notificationObservable = new NotificationObservable();
 
         kernel.registerPlugin("userManagement", userPlugin);
         kernel.registerPlugin("rewardManagement", rewardPlugin);
@@ -194,6 +197,7 @@ public class MainApp extends JFrame {
                 userPlugin.getCurrentUser().subBalance(rewardAmount);
                 balanceLabel.setText("Balance: $" + userPlugin.getCurrentUser().getBalance());
                 postPlugin.addPost(petName, description, location, type, picturePlugin.getPicture(), author, rewardAmount);
+                notificationObservable.notifyObservers("New post created: " + petName);
                 updatePostList();
                 dialog.dispose();
             } else {
@@ -293,6 +297,7 @@ public class MainApp extends JFrame {
             String password = new String(passwordField.getPassword());
             boolean success = userPlugin.authenticate(username, password);
             if (success) {
+                notificationObservable.addObserver(userPlugin.getCurrentUser());
                 updateLoginStatus();
                 dialog.dispose();
             } else {

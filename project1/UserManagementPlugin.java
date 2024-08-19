@@ -1,7 +1,12 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Observable;
+import java.util.Observer;
 
-class User {
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+
+class User implements Observer {
     private String username;
     private String password;
     private int balance;
@@ -22,6 +27,20 @@ class User {
 
     public int getBalance() {
         return balance;
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        System.out.println("NOTI");
+        // get string from arg
+        String str = (String) arg;
+        // popup a message box with the string
+        JDialog loginDialog = new JDialog();
+        loginDialog.setTitle("Notification");
+        loginDialog.add(new JLabel(str));
+        loginDialog.setSize(200, 100);
+        loginDialog.setVisible(true);
+        System.out.println("NOTI : " + str);
     }
 
     public void addBalance(int amount) {

@@ -17,12 +17,14 @@ public class MainApp extends JFrame {
     private RewardManagementPlugin rewardPlugin;
     private PictureManagementPlugin picturePlugin;
     private boolean loggedIn = false;
+    private NotificationObservable notificationObservable;
 
     public MainApp() {
         posts = new ArrayList<>();
         postListModel = new DefaultListModel<>();
         postList = new JList<>(postListModel);
         adLabel = new JLabel();
+        notificationObservable = new NotificationObservable();
 
         // Initialize the microkernel and plugins
         kernel = new Microkernel();
@@ -138,6 +140,7 @@ public class MainApp extends JFrame {
                 String author = userPlugin.getCurrentUser() != null ? userPlugin.getCurrentUser().getUsername()
                         : "Unknown";
                 Post newPost = new Post(petName, description, location, type, picturePlugin.getPicture(), author);
+                notificationObservable.notifyObservers("New post created by " + author + ": " + petName);
                 posts.add(newPost);
                 updatePostList();
                 dialog.dispose();
@@ -227,6 +230,8 @@ public class MainApp extends JFrame {
             String username = usernameField.getText();
             String password = new String(passwordField.getPassword());
             if (userPlugin.authenticate(username, password)) {
+                System.out.println("Logged in as: " + userPlugin.getCurrentUser().getUsername());
+                notificationObservable.addObserver(userPlugin.getCurrentUser());
                 JOptionPane.showMessageDialog(loginDialog, "Login successful!");
                 updateLoginStatus();
                 loginDialog.dispose();

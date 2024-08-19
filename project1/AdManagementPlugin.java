@@ -9,7 +9,8 @@ public class AdManagementPlugin implements Plugin {
 
     @Override
     public void initialize() {
-        adLabel.setText("<html><center><strong>Ad:</strong> Get 20% off at PetStore! Use code FLUFFY20</center></html>");
+        adLabel.setText(
+                "<html><center><strong>Ad:</strong> Get 20% off at PetStore! Use code FLUFFY20</center></html>");
     }
 
     @Override

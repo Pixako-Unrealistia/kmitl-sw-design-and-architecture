@@ -10,72 +10,97 @@ public class RemoteDevice {
 	private State playing;
 	private State paused;
 	private State stopped;
-	
-	//the current state of the player
+	private State rewind;
+	private State locked;
+
+	// the current state of the player
 	private State currentState;
-	
+
 	/**
 	 * the current position of the media
 	 * this may be 0 (the beginning of the media)
-	 * up to some int value representing  the end of the media
+	 * up to some int value representing the end of the media
 	 */
-	private int currentPosition; 
+	private int currentPosition;
 
-	// initialize the remote device	
+	// initialize the remote device
 	public RemoteDevice() {
 		playing = new Playing(this);
 		paused = new Paused(this);
 		stopped = new Stopped(this);
-	
-		// initial state is stopped	
+		rewind = new Rewind(this);
+		locked = new Locked(this);
+
+		// initial state is stopped
 		currentState = stopped;
 
 		// we are at the beginning of the media
 		currentPosition = 0;
 	}
 
-	// set the state of the device	
+	// set the state of the device
 	public void setState(State currentState) {
 		this.currentState = currentState;
 	}
 
-	// set the position of the media	
+	// set the position of the media
 	public void setPosition(int position) {
 		currentPosition = position;
 	}
 
-	// get the current position of the media	
+	// get the current position of the media
 	public int getPosition() {
 		return currentPosition;
 	}
 
-	// press the Play button	
+	// press the Play button
 	public void pressPlay() {
 		currentState.pressPlay();
 	}
-	
-	// press the Pause button	
+
+	// press the Pause button
 	public void pressPause() {
 		currentState.pressPause();
 	}
-	
-	// press the Stop button	
+
+	// press the Stop button
 	public void pressStop() {
 		currentState.pressStop();
 	}
 
-	// return the playing state	
+	// press the Rewind button
+	public void pressRewind() {
+		currentState.pressRewind();
+	}
+
+	// press the Lock button
+	public void pressLock() {
+		currentState.pressLock();
+	}
+
+	// return the playing state
 	public State getPlayingState() {
 		return playing;
 	}
-	
-	// return the paused state	
+
+	// return the paused state
 	public State getPausedState() {
 		return paused;
 	}
-	
-	// return the stopped state	
+
+	// return the stopped state
 	public State getStoppedState() {
 		return stopped;
 	}
+
+	// return the rewind state
+	public State getRewindState() {
+		return rewind;
+	}
+
+	// return the locked state
+	public State getLockedState() {
+		return locked;
+	}
+
 }

@@ -14,7 +14,6 @@ public class Playing implements State {
 	// the Play button is pressed
 	public boolean pressPlay() {
 		System.out.println("The player is already playing.");
-
 		return false;
 	}
 
@@ -22,7 +21,6 @@ public class Playing implements State {
 	public boolean pressPause() {
 		System.out.println("The player is paused.");
 		remote.setState(remote.getPausedState());
-
 		return true;
 	}
 
@@ -31,7 +29,6 @@ public class Playing implements State {
 		System.out.println("The player is now stopped.");
 		remote.setState(remote.getStoppedState());
 		remote.setPosition(0);
-
 		return true;
 	}
 
@@ -43,7 +40,6 @@ public class Playing implements State {
 	public boolean pressLock() {
 		System.out.println("The player is now locked.");
 		remote.setState(remote.getLockedState());
-
 		return true;
 	}
 

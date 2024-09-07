@@ -8,7 +8,7 @@ public class test_prims {
         Cube cube1 = new Cube(1.0f,1.0f,1.0f);
         Cube cube2 = new Cube(1.0f,1.0f,1.0f);
         Sphere sphere1 = new Sphere(4.0f);
-       // Cylinder cylinder1 = new Cylinder();
+        // Cylinder cylinder1 = new Cylinder();
         
         //Initialize three composite prims
         Object pcom1 = new Object();
@@ -22,7 +22,7 @@ public class test_prims {
 
      
          pcom2.render();
-         System.out.println(pcom2.volume());
+         System.out.println("pcom2 volume:"+pcom2.volume());
         
          Iterator iterator = pcom2.createIterator();
          while (iterator.hasNext()) {
@@ -30,5 +30,3 @@ public class test_prims {
            }
         }
 }
-
- 

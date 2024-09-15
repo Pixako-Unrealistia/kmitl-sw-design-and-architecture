@@ -1,6 +1,7 @@
 public class Screen {
     private static Screen Screen = new Screen();
     private Screen() {
+        
     }
     public static Screen getScreen() {
         return Screen;

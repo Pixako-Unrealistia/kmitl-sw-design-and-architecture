@@ -13,13 +13,22 @@ public class XML_Writer {
         System.out.println(xmlOutput);
     }
 
-    public void draw_a_pixel(int x, int y, int r) {
+    public void draw_a_pixel(int x, int y) {
         String xmlOutput = String.format("<Pixel x=\"%d\" y=\"%d\" />", x, y);
         System.out.println(xmlOutput);
     }
 
     public void draw_a_circle(int x, int y, int r) {
         String xmlOutput = String.format("<Circle x=\"%d\" y=\"%d\" radius=\"%d\" />", x, y, r);
+        System.out.println(xmlOutput);
+    }
+
+    public void draw_a_polygon(int[] xPoints, int[] yPoints) {
+        String xmlOutput = "<Polygon>";
+        for (int i = 0; i < xPoints.length; i++) {
+            xmlOutput += String.format("<Point x=\"%d\" y=\"%d\" />", xPoints[i], yPoints[i]);
+        }
+        xmlOutput += "</Polygon>";
         System.out.println(xmlOutput);
     }
 }

@@ -84,33 +84,5 @@ public class Monitor extends JComponent {
         }
     }
 
-    private static class Line {
-        int x1, y1, x2, y2;
 
-        Line(int x1, int y1, int x2, int y2) {
-            this.x1 = x1;
-            this.y1 = y1;
-            this.x2 = x2;
-            this.y2 = y2;
-        }
-    }
-
-    private static class Pixel {
-        int x, y;
-
-        Pixel(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-
-    private static class Arc {
-        int x, y, r;
-
-        Arc(int x, int y, int r) {
-            this.x = x;
-            this.y = y;
-            this.r = r;
-        }
-    }
 }

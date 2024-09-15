@@ -5,6 +5,8 @@ public abstract class Shape{
     protected DrawingService draw;
 
     public Shape(int x, int y) {
+        this.x = x;
+        this.y = y;
         this.draw = new WrapMonitor();
     }
 

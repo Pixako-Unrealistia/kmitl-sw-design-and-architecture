@@ -17,8 +17,4 @@ public class WrapScreen extends DrawingService {
     public void drawCircle(int x, int y, int r) {
         screen.draw_a_circle(x, y, r);
     }
-
-    public void drawPolygon(int[] xPoints, int[] yPoints) {
-        screen.draw_a_polygon(xPoints, yPoints);
-    }
 }

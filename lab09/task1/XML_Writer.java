@@ -23,12 +23,4 @@ public class XML_Writer {
         System.out.println(xmlOutput);
     }
 
-    public void draw_a_polygon(int[] xPoints, int[] yPoints) {
-        String xmlOutput = "<Polygon>";
-        for (int i = 0; i < xPoints.length; i++) {
-            xmlOutput += String.format("<Point x=\"%d\" y=\"%d\" />", xPoints[i], yPoints[i]);
-        }
-        xmlOutput += "</Polygon>";
-        System.out.println(xmlOutput);
-    }
 }

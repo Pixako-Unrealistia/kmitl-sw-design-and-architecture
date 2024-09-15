@@ -18,7 +18,6 @@ public class Monitor extends JComponent {
     private List<Line> lines;
     private List<Pixel> pixels;
     private List<Arc> arcs;
-    private List<Polygon> polygons;
     private JFrame frame;
 
     private Monitor() {
@@ -30,7 +29,6 @@ public class Monitor extends JComponent {
         lines = new LinkedList<>();
         pixels = new LinkedList<>();
         arcs = new LinkedList<>();
-        polygons = new LinkedList<>();
         frame.setVisible(true);
     }
 
@@ -49,20 +47,11 @@ public class Monitor extends JComponent {
         repaint();
     }
 
-    public synchronized void draw_a_polygon(int[] xPoints, int[] yPoints) {
-        polygons.add(new Polygon(xPoints, yPoints));
-        repaint();
-    }
-
     @Override
     public synchronized void paint(Graphics g) {
         g.setColor(Color.red);
         for (Line line : lines) {
             g.drawLine(line.x1, line.y1, line.x2, line.y2);
-        }
-        g.setColor(Color.red);
-        for (Polygon polygon : polygons) {
-            g.drawPolygon(polygon.xPoints, polygon.yPoints, polygon.xPoints.length);
         }
         g.setColor(Color.red);
         for (Pixel pixel : pixels) {
@@ -73,16 +62,4 @@ public class Monitor extends JComponent {
             g.drawArc(arc.x, arc.y, arc.r * 2, arc.r * 2, 0, 360);
         }
     }
-
-    private static class Polygon {
-        int[] xPoints;
-        int[] yPoints;
-
-        Polygon(int[] xPoints, int[] yPoints) {
-            this.xPoints = xPoints;
-            this.yPoints = yPoints;
-        }
-    }
-
-
 }

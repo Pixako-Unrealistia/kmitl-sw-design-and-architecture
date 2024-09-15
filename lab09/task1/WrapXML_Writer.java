@@ -17,7 +17,4 @@ public class WrapXML_Writer extends DrawingService {
         xml_writer.draw_a_circle(x, y, r);
     }
 
-    public void drawPolygon(int[] xPoints, int[] yPoints) {
-        xml_writer.draw_a_polygon(xPoints, yPoints);
-    }
 }

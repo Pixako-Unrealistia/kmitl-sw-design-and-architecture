@@ -10,6 +10,7 @@ public class Main {
         shapes.add(new Pixel (26, 26));
         shapes.add(new Rectangle(100, 100, 200, 200));
         shapes.add(new Triangle(50, 50, 100, 50, 75, 100));
+        shapes.add(new Hexagon(10, 10, 50, 10, 60, 30, 50, 50, 10, 50, 0, 30));
         for (Shape s : shapes) {
             s.draw();
           }

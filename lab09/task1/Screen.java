@@ -18,7 +18,6 @@ public class Screen extends JComponent {
     private List<Line> lines;
     private List<Pixel> pixels;
     private List<Arc> arcs;
-    private List<Polygon> polygons;
     private JFrame frame;
 
     private Screen() {
@@ -30,7 +29,6 @@ public class Screen extends JComponent {
         lines = new LinkedList<>();
         pixels = new LinkedList<>();
         arcs = new LinkedList<>();
-        polygons = new LinkedList<>();
         frame.setVisible(true);
     }
 
@@ -49,20 +47,11 @@ public class Screen extends JComponent {
         repaint();
     }
 
-    public synchronized void draw_a_polygon(int[] xPoints, int[] yPoints) {
-        polygons.add(new Polygon(xPoints, yPoints));
-        repaint();
-    }
-
     @Override
     public synchronized void paint(Graphics g) {
         g.setColor(Color.blue);
         for (Line line : lines) {
             g.drawLine(line.x1, line.y1, line.x2, line.y2);
-        }
-        g.setColor(Color.blue);
-        for (Polygon polygon : polygons) {
-            g.drawPolygon(polygon.xPoints, polygon.yPoints, polygon.xPoints.length);
         }
         g.setColor(Color.blue);
         for (Pixel pixel : pixels) {
@@ -74,43 +63,4 @@ public class Screen extends JComponent {
         }
     }
 
-    private static class Polygon {
-        int[] xPoints;
-        int[] yPoints;
-
-        Polygon(int[] xPoints, int[] yPoints) {
-            this.xPoints = xPoints;
-            this.yPoints = yPoints;
-        }
-    }
-
-    private static class Line {
-        int x1, y1, x2, y2;
-
-        Line(int x1, int y1, int x2, int y2) {
-            this.x1 = x1;
-            this.y1 = y1;
-            this.x2 = x2;
-            this.y2 = y2;
-        }
-    }
-
-    private static class Pixel {
-        int x, y;
-
-        Pixel(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-
-    private static class Arc {
-        int x, y, r;
-
-        Arc(int x, int y, int r) {
-            this.x = x;
-            this.y = y;
-            this.r = r;
-        }
-    }
 }

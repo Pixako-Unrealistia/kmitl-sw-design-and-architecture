@@ -14,7 +14,7 @@ public class XML_Writer {
     }
 
     public void draw_a_pixel(int x, int y, int r) {
-        String xmlOutput = String.format("<Pixel x=\"%d\" y=\"%d\" radius=\"%d\" />", x, y, r);
+        String xmlOutput = String.format("<Pixel x=\"%d\" y=\"%d\" />", x, y);
         System.out.println(xmlOutput);
     }
 

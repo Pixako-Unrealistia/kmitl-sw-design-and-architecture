@@ -9,8 +9,8 @@ public class WrapXML_Writer extends DrawingService {
         xml_writer.draw_a_line(x1, y1, x2, y2);
     }
     
-    public void drawpixel(int x, int y, int r) {
-        xml_writer.draw_a_pixel(x, y, r);
+    public void drawpixel(int x, int y) {
+        xml_writer.draw_a_pixel(x, y);
     }
     
     public void drawCircle(int x, int y, int r) {

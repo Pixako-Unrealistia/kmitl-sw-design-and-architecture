@@ -1,10 +1,14 @@
 public class Pixel extends Shape {
 
+    private int x;
+    private int y;
+
     public Pixel(int x, int y) {
-        super(x, y);
+        this.x = x;
+        this.y = y;
     }
 
     public void draw() {
-        draw.drawPixel(x, y);
+        draw_service.drawPixel(x, y);
     }   
 }

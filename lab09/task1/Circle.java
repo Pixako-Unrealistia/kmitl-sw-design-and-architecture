@@ -1,13 +1,16 @@
 public class Circle extends Shape {
+    private	int x;
+	private int y;
     protected int r;
   
     public Circle(int x, int y, int r) {
-      super(x, y);
-      this.r = r;
+        this.x = x;
+	    this.y = y;
+        this.r = r;
     }
   
     public void draw() {
-      draw.drawCircle(x, y, r);
+        draw_service.drawCircle(x, y, r);
     }
   
   }

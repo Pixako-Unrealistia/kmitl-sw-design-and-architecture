@@ -1,7 +1,10 @@
 public class XML_Writer{
-    private static XML_Writer xml_writer = new XML_Writer();
+    private static XML_Writer xml_writer;
 
     public static XML_Writer getXML_Writer() {
+        if (xml_writer == null) {
+            xml_writer = new XML_Writer();
+        }
         return xml_writer;
     }
 

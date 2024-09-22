@@ -6,7 +6,7 @@ public class Handler {
     public Handler getSuccessor() {
         return successor;
     }
-    public void handleRequest(String request) {
+    public void handleRequest(Email request) {
         successor.handleRequest(request);
     };
 }

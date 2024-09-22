@@ -1,9 +1,9 @@
 public class ComplaintHandler extends Handler {
-    public void handleRequest(String request) {
-        if (request == "complaint") {
+    public void handleRequest(Email email) {
+        if (email.getType() == "complaint") {
             System.out.println("ComplaintHandler handling complaint mail.");
         } else {
-            getSuccessor().handleRequest(request);
+            getSuccessor().handleRequest(email);
         }
     }
 }

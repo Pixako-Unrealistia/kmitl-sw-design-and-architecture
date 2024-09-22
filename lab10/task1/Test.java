@@ -8,8 +8,10 @@ public class Test {
         spamHandler.setSuccessor(fanHandler);
         fanHandler.setSuccessor(complaintHandler);
         complaintHandler.setSuccessor(newLocationHandler);
+
+        spamHandler.handleRequest("spam");
         spamHandler.handleRequest("fan");
-
-
+        spamHandler.handleRequest("complaint");
+        spamHandler.handleRequest("new location");
     }
 }

@@ -18,8 +18,7 @@ public class PdfIcon extends AbstractIcon {
     private final int H = 48;
     private ImageIcon icon;
 
-
-    public PdfIcon() {
+    PdfIcon() {
         URL iconURL = ClassLoader.getSystemResource("icons/pdf.png");
         if (iconURL != null) {
             icon = new ImageIcon(iconURL);

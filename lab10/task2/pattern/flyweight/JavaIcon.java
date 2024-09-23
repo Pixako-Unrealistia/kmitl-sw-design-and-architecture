@@ -18,7 +18,7 @@ public class JavaIcon extends AbstractIcon {
     private final int H = 48;
     private ImageIcon icon;
 
-    public JavaIcon() {
+    JavaIcon() {
         URL iconURL = ClassLoader.getSystemResource("icons/source_java.png");
         if (iconURL != null) {
             icon = new ImageIcon(iconURL);

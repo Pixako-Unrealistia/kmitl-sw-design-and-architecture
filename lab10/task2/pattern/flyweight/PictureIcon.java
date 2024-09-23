@@ -18,20 +18,13 @@ public class PictureIcon extends AbstractIcon {
     private final int H = 48;
     private ImageIcon icon;
 
-
-    // COMPLETE.
-
-
-    // We make this package-visible so that only the corresponding
-    // factory can instantiate us.
     PictureIcon() {
-	URL iconURL =
-	    ClassLoader.getSystemResource("icons/picture.png");
-	if (iconURL != null) {
-	    icon = new ImageIcon(iconURL);
-	} else {
-	    System.out.println("Icon icons/picture.png not found");
-	}
+	    URL iconURL = ClassLoader.getSystemResource("icons/picture.png");
+        if (iconURL != null) {
+            icon = new ImageIcon(iconURL);
+        } else {
+            System.out.println("Icon icons/picture.png not found");
+        }
     }
 
     public void draw(Graphics g, int tx, int ty, String name, boolean sel) {

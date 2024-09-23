@@ -1,5 +1,5 @@
 //
-// $Header: /home/due1/cvsreps/due/java/pattern/flyweight/PictureIcon.java.templ,v 1.1 2002-05-14 09:41:25 due Exp $
+// $Header: /home/due1/cvsreps/due/java/pattern/flyweight/UnknownIcon.java.templ,v 1.1 2002-05-14 09:41:25 due Exp $
 //
 // Copyright (c) 2002 Eric Dubuis,
 // Berner Fachhochschule, HTA Biel.
@@ -13,7 +13,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.net.URL;
 
-public class PictureIcon extends AbstractIcon {
+public class UnknownIcon extends AbstractIcon {
 
     private final int H = 48;
     private ImageIcon icon;
@@ -21,16 +21,15 @@ public class PictureIcon extends AbstractIcon {
 
     // COMPLETE.
 
-
     // We make this package-visible so that only the corresponding
     // factory can instantiate us.
-    PictureIcon() {
+    UnknownIcon() {
 	URL iconURL =
-	    ClassLoader.getSystemResource("images/picture.png");
+	    ClassLoader.getSystemResource("icons/unknown.png");
 	if (iconURL != null) {
 	    icon = new ImageIcon(iconURL);
 	} else {
-	    System.out.println("Icon images/picture.png not found");
+	    System.out.println("Icon icons/unknown.png not found");
 	}
     }
 

@@ -11,15 +11,9 @@ package pattern.flyweight;
 
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
-import javax.swing.border.*;
-import javax.accessibility.*;
 
 import java.awt.*;
-import java.awt.event.*;
 import java.util.*;
-import java.io.*;
 
 public class FlyweightDemo extends JFrame
     implements MouseMotionListener
@@ -32,23 +26,24 @@ public class FlyweightDemo extends JFrame
     private String selectedName = "";
 
     private class Item {
-	String type;
-	String name;
-	AbstractIcon icon;
-	Item(String type, String name, AbstractIcon icon) {
-	    this.type = type;
-	    this.name = name;
-	    this.icon = icon;
-	}
+        String type;
+        String name;
+        AbstractIcon icon;
+        Item(String type, String name, AbstractIcon icon) {
+            this.type = type;
+            this.name = name;
+            this.icon = icon;
+        }
     }
 
     public FlyweightDemo() {
         super("Flyweight Demo");
+
         setSize(new Dimension(250,300));
         JPanel jp = new JPanel();
         getContentPane().add(jp, BorderLayout.CENTER);
         addMouseMotionListener(this);
-	addWindowListener(new WindowAdapter() {
+	    addWindowListener(new WindowAdapter() {
 		public void windowClosing(WindowEvent e) {System.exit(0);}
 	    });
 
@@ -58,56 +53,42 @@ public class FlyweightDemo extends JFrame
     }
 
     private void loadItems() {
-	// Get the icon factory.
-	// COMPLETE.
+        factory = IconFactory.getInstance();
 
-
-	// Create a bunch of different kind of items.
-	// COMPLETE.
-        items = new ArrayList();
-
-
-
-
-
-
-
-
+        items = new ArrayList<>();
+        items.add(new Item("folder", "Folder 1", factory.createIcon("folder")));
+        items.add(new Item("java", "Java File 1", factory.createIcon("java")));
+        items.add(new Item("picture", "Picture 1", factory.createIcon("picture")));
+        items.add(new Item("text", "Text File 1", factory.createIcon("text")));
+        items.add(new Item("unknown", "Unknown 1", factory.createIcon("unknown")));
+        items.add(new Item("folder", "Folder 2", factory.createIcon("folder")));
+        items.add(new Item("java", "Java File 2", factory.createIcon("java")));
     }
 
 
     public void paint(Graphics g) {
-	// super.paint(g);
-        //Folder f;
+        super.paint(g);
         Item item;
-
-        int j = 0;      //count number in row
-        int row = Top;  //start in upper left
+        int j = 0;      // count number in row
+        int row = Top;  // start in upper left
         int x = Left;
 
-        //go through all the items
-        for (int i = 0; i< items.size(); i++) {
-	    // Get next item, and draw its icon and name:
-	    // COMPLETE.
+        // go through all the items
+        for (int i = 0; i < items.size(); i++) {
             item = (Item) items.get(i);
+            item.icon.draw(g, x, row, item.name, item.name.equals(selectedName));
 
-
-
-
-
-
-
-
-	    // Recalculation of part of the extrinsic state:
-            x = x + HSpace;          //change to next posn
+            // Recalculation of part of the extrinsic state:
+            x = x + HSpace; // change to next position
             j++;
-            if (j >= HCount) {       //reset for next row
-                j = 0;         
+            if (j >= HCount) { // reset for next row
+                j = 0;
                 row += VSpace;
                 x = Left;
             }
         }
     }
+
 
     public void mouseMoved(MouseEvent e) {
         int j = 0;      //count number in row
@@ -131,6 +112,7 @@ public class FlyweightDemo extends JFrame
             }
         }
     }
+
     public void mouseDragged(MouseEvent e) {
     }
 

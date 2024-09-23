@@ -23,18 +23,18 @@ public class FolderIcon extends AbstractIcon {
     // factory can instantiate us.
     FolderIcon() {
 	URL iconURL =
-	    ClassLoader.getSystemResource("images/folder_open.png");
+	    ClassLoader.getSystemResource("icons/folder_open.png");
 	if (iconURL != null) {
 	    iconSel = new ImageIcon(iconURL);
 	} else {
-	    System.out.println("Icon images/folder_open.png not found");
+	    System.out.println("Icon icons/folder_open.png not found");
 	}
 	iconURL =
-	    ClassLoader.getSystemResource("images/folder.png");
+	    ClassLoader.getSystemResource("icons/folder.png");
 	if (iconURL != null) {
 	    iconUnsel = new ImageIcon(iconURL);
 	} else {
-	    System.out.println("Icon images/folder.png not found");
+	    System.out.println("Icon icons/folder.png not found");
 	}
     }
 

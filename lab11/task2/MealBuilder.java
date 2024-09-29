@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package builderlab;
+
 
 /**
  *
@@ -19,5 +19,14 @@ public abstract class MealBuilder {
   protected Meal theMeal;
 
   // Additional methods here
+  public Meal getMeal(){
+    return theMeal;
+  }
+  public void createNewMeal(){
+    theMeal = new Meal();
+  }
+  public abstract void buildEntree();
+  public abstract void buildSide();
+  public abstract void buildDrink();
 
 }

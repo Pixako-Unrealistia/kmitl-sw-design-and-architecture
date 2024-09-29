@@ -3,12 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package builderlab;
 
 /**
  *
  * @author boonjv
  */
 public class HealthyMealBuilder extends MealBuilder {
-    
+    public void buildEntree(){
+        theMeal.setEntree("chicken sandwich");
+    }
+    public void buildSide(){
+        theMeal.setSide("carrot sticks");
+    }
+    public void buildDrink(){
+        theMeal.setDrink("diet cola");
+    }
 }

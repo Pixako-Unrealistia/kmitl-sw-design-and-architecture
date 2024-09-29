@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package builderlab;
 
 /**
  *
@@ -45,6 +44,11 @@ public class Cook {
    */
   public void constructMeal() {
     // Take the necessary steps
+    builder.createNewMeal();
+    builder.buildEntree();
+    builder.buildSide();
+    builder.buildDrink();
+
   }
 
 }
